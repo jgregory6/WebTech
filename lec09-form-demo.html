@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="mailto:zli@babson.edu" method="post">
+      <label for="username">Username: </label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter your username"
+      />
+
+      <label for="user-id">User ID: </label>
+      <input type="text" name="user-id" id="user-id" />
+      <br />
+      <label for="password"
+        >Password: <input type="password" id="password" name="pw"
+      /></label>
+
+      <div>
+        Gender:
+        <label
+          >Male
+          <input type="radio" name="gender" value="male" />
+        </label>
+        <label
+          >Female
+          <input type="radio" name="gender" value="female" />
+        </label>
+      </div>
+
+      <div>What product(s) do you own?</div>
+      <div>
+        <input
+          type="checkbox"
+          id="smartphone"
+          name="products"
+          value="smartphone"
+        />
+        <label for="smartphone">Smartphone</label>
+      </div>
+      <div>
+        <input type="checkbox" id="desktop" name="products" value="desktop" />
+        <label for="desktop">Desktop computer</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="laptop"
+          name="products"
+          value="laptop"
+          checked
+        />
+        <label for="laptop">Laptop computer</label>
+      </div>
+      <input type="submit" value="Submit" name="submit" />
+      <input type="reset" value="Reset" name="reset" />
+    </form>
+  </body>
+</html>
