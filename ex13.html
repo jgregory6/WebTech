@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 13</title>
+  </head>
+  <body>
+    <h1>Manipulating Styles and Images</h1>
+    <div>
+      <img
+        src="images/tiger1.jpg"
+        alt="Tiger 1"
+        title="Tiger is walking"
+        width="400"
+        id="tiger1"
+      />
+    </div>
+
+    <script>
+      function enlarge() {
+        /* Pseudo-code:
+        1. "get" the image ✅
+          - select the element (by id, or tagname) ✅
+          - assign this element to a variable ✅
+        2. "get" the size of the image ✅
+          - assign the width of the image to another variable ✅
+        3. change the size ✅
+          - increase the value of the second variable ✅
+        4. assign the new value back to the width of the image ✅
+        */
+        let myImage = document.getElementById("tiger1");
+        let w = myImage.width;
+        w = w * 1.5;
+        myImage.width = w;
+      }
+
+      document.getElementById("tiger1").onmouseover = enlarge;
+
+      function getBackToOriginalSize() {
+        /* Pseudo-code:
+        1. "get" the image ✅
+          - select the element (by id, or tagname) ✅
+          - assign this element to a variable ✅
+        2. "get" the size of the image ✅
+          - assign the width of the image to another variable ✅
+        3. change the size ✅
+          - decrese the value of the second variable ✅
+        4. assign the new value back to the width of the image ✅
+        */
+        let myImage = document.querySelector("#tiger1");
+        let w = myImage.width;
+        console.log(w);
+        w = w / 1.5;
+        myImage.width = w;
+      }
+
+      document.getElementById("tiger1").onmouseout = getBackToOriginalSize
+    </script>
+  </body>
+</html>
