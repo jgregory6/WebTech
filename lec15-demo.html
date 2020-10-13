@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS demo</title>
+  </head>
+  <body>
+    <p>x = <span id="x-span">5</span></p>
+    <p>y = <span id="y-span">4</span></p>
+    <p>result = <span id="result-span">?</span></p>
+    <div>
+      <button>calculate</button>
+      <button id="add-btn">add</button>
+    </div>
+    <hr />
+    <p>Computer's message: <span id="message"></span></p>
+    <img id="img1" src="" alt="" width="200" />
+    <button id="ask-btn">Ask</button>
+
+    <script>
+      // refactor-ing
+      function ask() {
+        // alert("message received!")
+        let userInput = prompt("What is your gender?");
+        let msg = document.getElementById("message");
+        let msgImage = document.getElementById("img1");
+        if (
+          userInput.toLowerCase() === "male" ||
+          userInput.toLowerCase() === "man"
+        ) {
+          msg.innerText = "How are you, sir?";
+          msgImage.src = "images/elephant.jpg";
+        } else if (userInput === "female") {
+          msg.innerText = "How are you, madam?";
+          msgImage.src = "images/tiger1.jpg";
+        } else {
+          msg.innerText = "OK. I did not get your gender.";
+          msgImage.src = "";
+        }
+      }
+      document.getElementById("ask-btn").onclick = ask;
+
+      document.querySelector("button").onclick = function () {
+        calculate();
+      };
+
+      function calculate() {
+        let a = document.querySelector("#x-span").innerText;
+        // console.log(a);
+        let b = document.getElementById("y-span").innerText;
+        let result = a * b;
+        let r = document.querySelector("#result-span");
+        r.innerText = result;
+        r.style.color = "red";
+        r.style.fontSize = "30pt";
+
+        // console.log("Done!");
+      }
+
+      function add(arg1, arg2) {
+        // arg1-> 5, arg2 ->4 for add(5,4) only
+        let result = arg1 + arg2;
+        let r = document.querySelector("#result-span");
+        r.innerText = result;
+      }
+
+      document.querySelector("#add-btn").onclick = function () {
+        let a = document.querySelector("#x-span").innerText;
+        // a -> "5"
+        a = parseInt(a);
+        // a -> 5
+        let b = document.getElementById("y-span").innerText;
+        b = parseInt(b);
+        // b -> 4
+        add(a, b);
+        //add(5, 4)
+      };
+
+      // document.querySelector("button").onclick = calculate;
+    </script>
+  </body>
+</html>
