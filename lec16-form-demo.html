@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form-feedback" action="" method="POST">
+      <label>
+        Your Name: <input type="text" name="userName" maxlength="30"
+      /></label>
+      <br />
+      Password: <input type="password" name="pw" />
+      <br />
+      <textarea name="comments" id="" cols="30" rows="10"></textarea>
+      <button id="click-btn">Click</button>
+    </form>
+
+    <script>
+      function f() {
+        const myForm = document.getElementById("form-feedback");
+        const userName = myForm["userName"].value;
+        const userPassword = myForm["pw"].value;
+        console.log(userPassword);
+        if (userName.length === 0) {
+          alert("It cannot be empty.");
+        } else if (userName === "Steven" && userPassword === "1234") {
+          console.log("Yes!");
+          alert("You are Steven. Welcome!");
+          myForm["comments"].value = "Steven, welcome to our company. blah...";
+        } else {
+          alert("You are not Steven. Get out of here!");
+        }
+        // console.log(userName);
+        return false;
+      }
+
+      document.getElementById("click-btn").onclick = f;
+    </script>
+  </body>
+</html>
