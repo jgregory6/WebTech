@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex14</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      img {
+        border: 10px ridge gold;
+        display: block;
+        width: 500px;
+        margin: 30px auto;
+      }
+      div {
+        margin-top: 30px;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Changing image using user input</h1>
+    <img src="" alt="Click here to choose the image" title="" />
+
+    <div>
+      Enter the last name of your favoriate Celtics player
+      <ul>
+        <li>Jaylen Brown</li>
+        <li>Tacko Fall</li>
+        <li>Jayson Tatum</li>
+        <li>Kemba Walker</li>
+      </ul>
+    </div>
+    <script>
+      function showImage() {
+        let message = prompt("Who is your favorite Celtics player?");
+        let player = document.querySelector("img");
+
+        if (message.toLowerCase() === "brown") {
+          player.src = "images/jaylen-brown.png";
+        } else if (message.toLowerCase() === "fall") {
+          player.src = "images/tacko-fall.png";
+        } else if (message.toLowerCase() === "tatum") {
+          player.src = "images/jayson-tatum.png";
+        } else if (message.toLowerCase() === "walker") {
+          player.src = "images/kemba-walker.png";
+        } else {
+          alert("Incorrect!");
+        }
+      }
+
+      document.querySelector("img").onclick = showImage;
+    </script>
+  </body>
+</html>
