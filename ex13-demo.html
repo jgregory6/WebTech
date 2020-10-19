@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Manipulating Styles and Images</h1>
+
+    <p>
+      <img
+        src="images/tiger1.jpg"
+        alt="Tiger 1"
+        title="Tiger is walking"
+        width="400"
+        id="tiger1"
+      />
+    </p>
+
+    <p>
+      <img
+        src="images/tiger2.jpg"
+        alt="Tiger 2"
+        title="Tiger is looking at you"
+        width="400"
+        id="tiger2"
+      />
+    </p>
+
+    <script>
+      function enlarge(x) {
+        console.log(x);
+        let i = document.getElementById(x);
+        console.log(i);
+        let w = i.width;
+        console.log(w);
+        w = w * 1.5;
+        console.log("w=", w);
+        i.width = w;
+        console.log(i.width);
+        // let h = document.getElementById("h");
+        // if (x == "tiger1") {
+        //   h.innerHTML = "The big tiger is watching you";
+        // } else if (x == "tiger") {
+        //   h.innerHTML = "The big tiger is watching you";
+        // } else if (x == "class2") {
+        //   h.innerHTML = "Owen is watching you";
+        // }
+      }
+
+      function shrink(x) {
+        let i = document.getElementById(x);
+        let w = i.width;
+        // console.log(w);
+        w = w / 1.5;
+        // console.log(w);
+        // console.log(i.width);
+        i.width = w;
+        document.querySelector("h1").innerHTML =
+          "Manipulating Styles and Images";
+      }
+
+      let images = document.querySelectorAll("img");
+      for (let index = 0; index < images.length; index++) {
+        const element = images[index];
+        element.addEventListener("mouseover", function () {
+          enlarge(this.id);
+        });
+        element.addEventListener("mouseout", function () {
+          shrink(this.id);
+        });
+      }
+    </script>
+  </body>
+</html>
