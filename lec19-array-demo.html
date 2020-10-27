@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post" id="my-form">
+      <label><input type="radio" name="colors" value="red" />Red</label>
+      <label><input type="radio" name="colors" value="blue" />Blue</label>
+      <label><input type="radio" name="colors" value="yellow" />Yellow</label>
+      <label><input type="radio" name="colors" value="green" />Green</label>
+
+      <label><input type="radio" name="colors" value="brown" />Brown</label>
+
+      <input type="button" value="select" id="select-btn" />
+    </form>
+
+    <script>
+      function select() {
+        // console.log("...here!");
+        // for (let i = 0; i < 5; i=i+1) {
+        //   console.log("i:", i)
+        //   if (i === 3) {
+        //     console.log("We found 3!");
+        //   } else {
+        //     console.log("... not this time");
+        //   }
+        //   console.log("");
+        // }
+
+        const myForm = document.getElementById("my-form");
+        const colors = myForm["colors"];
+
+        for (let i = 0; i < colors.length; i++) {
+          // the following 3 lines are STRONGLY recommended to add  
+          console.log("i:  ", i);
+          console.log(colors[i]);
+          console.log(colors[i].checked);
+
+          if (colors[i].checked) {
+            let userChoice = colors[i].value;
+            document.querySelector("body").style.backgroundColor = userChoice;
+          }
+
+          console.log("");
+        }
+      }
+
+      document.getElementById("select-btn").onclick = select;
+    </script>
+  </body>
+</html>
