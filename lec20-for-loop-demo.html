@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop demo</title>
+  </head>
+  <body>
+    <h1>For Loop demo</h1>
+    <h4>Sum up all the square of odd integers from 20 to 100</h4>
+    <button>Calculate</button>
+    <p id="result"></p>
+    <div id="students"></div>
+
+    <script>
+      // const numbers = [0, 1, 2, 3, 4, 5, 6, 7];
+
+      function calc() {
+        // let sum = 0 + 1 + 2 + 3 + 4 + 5;
+
+        // let sum = 0;
+        // for (let i = 21; i < 101; i++) {
+        //   if (i % 2 !== 0) {
+        //     sum = sum + i*i;
+        //     console.log(
+        //       "In iteration " +
+        //         i +
+        //         ", we added " +
+        //         i*i +
+        //         ", the sum becomes " +
+        //         sum
+        //     );
+        //     console.log("");
+        //   } else {
+        //     console.log(
+        //       "in iteration " +
+        //         i +
+        //         ", we did not add " +
+        //         i +
+        //         ", sum is still " +
+        //         sum +
+        //         ", because i is not an odd number."
+        //     );
+        //     console.log("");
+        //   }
+        // }
+
+        // console.log("sum is ", sum);
+        // document.getElementById("result").innerText = sum;
+        names = [
+          "Amir",
+          "Andrew",
+          "Aidan",
+          "Avery",
+          "Claire",
+          "Isabella",
+          "Jack",
+          "Jiayi (Lily)",
+          "Jinyi",
+          "Junxi",
+          "Kenzi",
+          "Kaitlyn",
+          "Michael",
+          "Madison",
+          "Farhan",
+          "Michelle",
+          "Ryan",
+          "Rafael",
+          "Supriya",
+          "Tony",
+          "Tyra",
+          "Yi'an (Ann)",
+          "Zeynep",
+        ];
+        let sum = "";
+        for (let i = 0; i < names.length; i++) {
+          console.log(names[i]);
+          let line =
+            "<p>" +
+            names[i] +
+            ": " +
+            (60 + Math.floor(Math.random() * 40)) +            
+            "</p>";
+
+          // sum = sum + line;
+          // console.log(sum);
+          document.getElementById("students").innerHTML += line;
+        }
+      }
+
+      
+      let counter = 0;
+      function doThat(){
+        counter++;
+        document.getElementById("result").innerHTML = counter;
+        setTimeout(doThat, 100)
+      }
+
+      document.querySelector("button").onclick = doThat;
+    </script>
+  </body>
+</html>
