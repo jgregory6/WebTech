@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex18</title>
+  </head>
+  <body>
+    <p>
+      <img
+        id="tiger"
+        src="images/tiger1.jpg"
+        alt="Slide Show of Tigers"
+        title="Tigers"
+      />
+    </p>
+    <p id="desc"></p>
+  </body>
+
+  <script>
+    const slides = [
+      "images/tiger1.jpg",
+      "images/tiger2.jpg",
+      "images/tiger3.jpg",
+      "images/tiger4.jpg",
+    ];
+    const colors = ["blue", "yellow", "red", "green"];
+    const descriptionList = [
+      "Tiger Walking",
+      "Tiger looking at you",
+      "Tiger looking to left",
+      "Two tigers",
+    ];
+
+    const tigerImage = document.getElementById("tiger");
+    const d = document.getElementById("desc");
+
+    let counter = 0;
+    let i = 0;
+
+    function slideShow() {
+      if (i == slides.length) {
+        i = 0;
+      }
+      tigerImage.src = slides[i];
+      tigerImage.style.borderColor = colors[i];
+      tigerImage.style.height = "300px";
+      d.innerHTML =
+        "<b>" +
+        descriptionList[i] +
+        "</b><br>global counter = " +
+        counter +
+        "<br>local counter = " +
+        i;
+
+      i++;
+      counter++;
+      setTimeout(slideShow, 1000);
+    }
+
+    // document.addEventListener("DOMContentLoaded", slideShow);
+    document.querySelector("body").onload = slideShow;
+  </script>
+</html>
