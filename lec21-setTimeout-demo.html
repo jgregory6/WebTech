@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout demo</title>
+  </head>
+  <body>
+    <h1>Counting Down ...</h1>
+    <button>Count Down</button>
+    <p id="result">5</p>
+    <script>
+      
+      let counter = 5; // Global variable
+
+      function countDown() {
+        if (counter > 0) {
+          counter = counter - 1;
+          document.getElementById("result").innerText = counter;
+          console.log(counter);
+          setTimeout(countDown, 1000);
+        } else {
+          document.getElementById("result").innerText = "Lift off!";
+          let audio = new Audio("media/Rocket-Sound.mp3");
+          audio.play();
+        }
+      }
+      document.querySelector("button").onclick = countDown;
+    </script>
+  </body>
+</html>
