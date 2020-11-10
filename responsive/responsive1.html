@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @media (min-width: 700px) {
+        body {
+          background-color: red;
+        }
+        h1 {
+          border: 10px blue solid;
+        }
+        h1::before{
+          content: "Hi, I am wide!"
+        }
+      }
+      @media (max-width: 699px) {
+        body {
+          background-color: blue;
+        }
+        h1 {
+          border: 10px red solid;
+          color: white;
+        }
+        h1::before{
+          content: "Hi, I am narrow!"
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to My Web Page!</h1>
+  </body>
+</html>
